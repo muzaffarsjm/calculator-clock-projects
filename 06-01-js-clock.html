@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Project Clock
+    </title>
+    <style>
+      body{
+        background-color: rgb(59, 110, 204);
+      }
+      .time{
+        text-align: center;
+        font-size: 70px;
+        margin-top: 140px;
+      }
+      .style-clock-numbers{
+        text-align: center;
+        font-size: 80px;
+        color: white;
+        padding-top: 60px;
+
+      }
+    </style>
+    <body>
+      <p class="time">TIME FLIES</p>
+
+      <div class="js-clock-holder style-clock-numbers"></div>
+
+      <script>
+        function clock(){  
+          let date = new Date();
+          let hour = date.getHours();
+          let min = date.getMinutes();
+          let sec = date.getSeconds();
+          
+          let time = document.querySelector('.js-clock-holder');
+          time.innerHTML = `${hour.toString().padStart(2, '0')}: ${min.toString().padStart(2, '0')}
+          : ${sec.toString().padStart(2, '0')} `;
+        };
+        clock();
+        setInterval(clock, 1000);
+
+      </script>
+    </body>
+  </head>
+</html>
