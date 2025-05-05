@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>calculayotir</title>
+    <link rel="stylesheet" href="calculator.css">
+  </head>
+
+  <body>
+    <div class="main-container">
+    <p class="result-displayer">0</p>
+    <p>  
+      <button onclick="
+        calculation += '1';
+        showAll();
+        ">1</button>
+
+      <button onclick="
+        calculation += '2';
+        showAll();
+        ">2</button>
+
+      <button onclick="
+        calculation += '3';
+        showAll();
+        ">3</button>
+
+      <button onclick="
+        calculation += ' + ';
+        showAll();
+        " class="math-operator">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation += '4';
+        showAll();
+        ">4</button>
+
+      <button onclick="
+        calculation += '5';
+        showAll();
+        ">5</button>
+
+      <button onclick="
+        calculation += '6';
+        showAll();
+        ">6</button>
+
+      <button onclick="
+        calculation += ' - ';
+        showAll();
+        " class="math-operator">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation += '7';
+        showAll();
+        ">7</button>
+
+      <button onclick="
+        calculation += '8';
+        showAll();
+        ">8</button>
+
+      <button onclick="
+        calculation += '9';
+        showAll();
+        ">9</button>
+
+      <button onclick="
+        calculation += ' * ';
+        showAll();
+        " class="math-operator">*</button>
+    </p>
+    <p>
+      <button onclick="
+        calculation += '0';
+        showAll();
+        ">0</button>
+
+      <button onclick="
+        calculation += '.';
+        showAll();
+        ">.</button>
+
+      <button onclick="
+        calculation = eval(calculation);
+
+        localStorage.setItem('result', JSON.stringify(calculation));
+        showAll();
+        ">=</button>
+
+      <button onclick="
+        calculation += ' / ';
+        showAll();
+        " class="math-operator">/</button>
+    </p>
+
+    <button onclick="
+      calculation = localStorage.removeItem('result') || ' ';
+      showAll();
+      " class="clear-button">Clear</button>
+  </div>
+
+    <script>
+      
+      let calculation = JSON.parse(localStorage.getItem('result')) || '';
+      showAll();
+      function showAll(){  
+        let resultAll = document.querySelector('.result-displayer');
+        resultAll.innerHTML = calculation;
+      };
+    </script>
+  </body>
+</html>

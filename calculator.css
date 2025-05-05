@@ -1,0 +1,32 @@
+body{
+  background-color: grey;
+}
+
+.math-operator{
+  background-color: orange;
+}
+
+button{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 10px;
+  font-size: 25px;
+}
+.result-displayer{
+  height: 90px;
+  width: 360px;
+  font-size: 80px;
+  margin: 0;
+  color: white;
+  text-align: right;
+}
+.clear-button{
+  width: 360px;
+  border-radius: 40px;
+}
+
+.main-container{
+  width: 380px;
+}
